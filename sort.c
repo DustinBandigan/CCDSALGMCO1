@@ -7,6 +7,13 @@ int shouldSwap(Point a, Point b, Point anchor) {
     double bx = b.x - anchor.x;
     double by = b.y - anchor.y;
 
+int aIsLeft = (ay == 0.0 && ax < 0.0);
+int bIsLeft = (by == 0.0 && bx < 0.0);
+
+if (aIsLeft != bIsLeft)
+    return aIsLeft;
+
+
     double cross = ax * by - ay * bx;
 
     if (cross < 0)
