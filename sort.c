@@ -11,9 +11,9 @@ int shouldSwap(Point a, Point b, Point anchor) {
     int aIsLeft = (ay == 0.0 && ax < 0.0);
     int bIsLeft = (by == 0.0 && bx < 0.0);
 
-if (aIsLeft != bIsLeft)
-    return aIsLeft;
-
+    if (aIsLeft != bIsLeft) {
+        return aIsLeft;
+    }
 
     double cross = ax * by - ay * bx;
 
@@ -88,6 +88,7 @@ void merge(Point arr[], int l, int m, int r, Point anchor) {
     }
     
     free(L);
+    free(R);
 }
 
 void mergeSort(Point arr[], int l, int r, Point anchor) {
